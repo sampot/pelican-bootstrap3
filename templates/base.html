@@ -169,12 +169,9 @@
         {% block content %}
         {% endblock %}
         </div>
-        {% if not HIDE_SIDEBAR or ABOUT_ME %}
+        {% if not HIDE_SIDEBAR %}
         <div class="col-sm-3" id="sidebar">
             <aside>
-            {% if ABOUT_ME %}
-                {% include 'includes/aboutme.html' %}
-            {% endif %}
             {% if not HIDE_SIDEBAR %}
                 {% include 'includes/sidebar.html' %}
             {% endif %}

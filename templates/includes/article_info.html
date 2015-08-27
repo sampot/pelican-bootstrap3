@@ -14,20 +14,20 @@
 
     {% if SHOW_SERIES %}
         {% if article.series %}
-            <span class="label label-default">Series</span>
-            Part {{ article.series.index}} of {{ article.series.name }}
+            <span class="label label-default">系列</span>
+            {{ article.series.name }} 第 {{ article.series.index}} 部
         {% endif %}
     {% endif %}
 
     {% if SHOW_ARTICLE_AUTHOR %}
         {% if article.author %}
-            <span class="label label-default">By</span>
+            <span class="label label-default">作者</span>
             <a href="{{ SITEURL }}/{{ article.author.url }}"><i class="fa fa-user"></i> {{ article.author }}</a>
         {% endif %}
     {% endif %}
 
     {% if SHOW_ARTICLE_CATEGORY %}
-        <span class="label label-default">Category</span>
+        <span class="label label-default">分類</span>
         <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
     {% endif %}
 
