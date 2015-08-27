@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Categories - {{ SITENAME }}{% endblock %}
+{% block title %}文章分類 - {{ SITENAME }}{% endblock %}
 
 {% block breadcrumbs %}
     {% if DISPLAY_BREADCRUMBS %}
@@ -12,7 +12,7 @@
 
 {% block content %}
     <section id="categories">
-        <h1>All Categories for {{ SITENAME }}</h1>
+        <h1>“{{ SITENAME }}” 所有文章分類</h1>
         <div class="panel-group" id="accordion">
             {% for category, articles in categories %}
             <div class="panel panel-default">

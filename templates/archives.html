@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Archives - {{ SITENAME }}{% endblock %}
+{% block title %}文章匯整 - {{ SITENAME }}{% endblock %}
 {% block breadcrumbs %}
     {% if DISPLAY_BREADCRUMBS %}
     <ol class="breadcrumb">
@@ -11,7 +11,7 @@
 
 {% block content %}
     <section id="content">
-        <h1>Archives for {{ SITENAME }}</h1>
+        <h1>”{{ SITENAME }}“ 文章匯整</h1>
         <div id="archives">
             {% for article in dates %}
                 <p>
