@@ -4,13 +4,13 @@
       <div class="row">
            <div class="col-sm-4">
                <div id="RecentComments" class="dsq-widget">
-                <h3 style="margin-bottom:0.5px;">最近的評論</h3>
+                <h3 class="fa fa-comments fa-lg" style="margin-bottom:0.5px;">最近的評論</h3>
                 <script type="text/javascript" src="http://{{ DISQUS_SHORTNAME }}.disqus.com/recent_comments_widget.js?num_items=5&hide_mods=0&hide_avatars=0&avatar_size=32&excerpt_length=100"></script>
                </div>
 
            </div>
            <div class="col-sm-4">
-               <h3 style="margin-bottom:0.5px;">網路連結</h3>
+               <h3 class="fa fa-external-link-square fa-lg" style="margin-bottom:0.5px;">網路連結</h3>
                </br>
                <ul style="list-style-type:circle">
                 {% for name, link in LINKS %}
@@ -43,10 +43,8 @@
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             a customized <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             and <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>
-            {%- if CC_LICENSE or CC_LICENSE_DERIVATIVES or CC_LICENSE_COMMERCIAL %}
-              {% from 'includes/cc-license.html' import cc_license_mark %}
-              <p><small>{{ cc_license_mark(cc_name=CC_LICENSE,derivatives=CC_LICENSE_DERIVATIVES,commercial=CC_LICENSE_COMMERCIAL,attr_markup=CC_ATTR_MARKUP,attr_props={'title':SITENAME,'name':article.author if article else AUTHOR,'url':SITEURL}) }}</small></p>
-            {% endif %}
+            <br/>
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="創用 CC 授權條款" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> 除另有標示，本著作係採用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">創用 CC 姓名標示-非商業性-相同方式分享 4.0 國際 授權條款</a>授權。
          </div>
          <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">回到頁頂</a></p></div>
       </div>
