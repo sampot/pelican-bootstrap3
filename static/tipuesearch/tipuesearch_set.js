@@ -44,16 +44,16 @@ var tipuesearch_stem = {'words': [
 
 // Internal strings
 
-var tipuesearch_string_1 = 'No title';
-var tipuesearch_string_2 = 'Showing results for';
-var tipuesearch_string_3 = 'Search instead for';
-var tipuesearch_string_4 = '1 result';
-var tipuesearch_string_5 = 'results';
-var tipuesearch_string_6 = 'Prev';
-var tipuesearch_string_7 = 'Next';
-var tipuesearch_string_8 = 'Nothing found';
-var tipuesearch_string_9 = 'Common words are largely ignored';
-var tipuesearch_string_10 = 'Search too short';
-var tipuesearch_string_11 = 'Should be one character or more';
-var tipuesearch_string_12 = 'Should be';
-var tipuesearch_string_13 = 'characters or more';
+var tipuesearch_string_1 = '沒有標題';
+var tipuesearch_string_2 = '目前顯示的是以下字詞的搜尋結果：';
+var tipuesearch_string_3 = '您可以改回搜尋：';
+var tipuesearch_string_4 = '1 項結果';
+var tipuesearch_string_5 = '項結果';
+var tipuesearch_string_6 = '前一頁';
+var tipuesearch_string_7 = '下一頁';
+var tipuesearch_string_8 = '沒找到任何結果';
+var tipuesearch_string_9 = '常用字大部份都被忽略';
+var tipuesearch_string_10 = '搜尋的字詞過短';
+var tipuesearch_string_11 = '須有一個或更多字元';
+var tipuesearch_string_12 = '須為';
+var tipuesearch_string_13 = '個或更多字元';
