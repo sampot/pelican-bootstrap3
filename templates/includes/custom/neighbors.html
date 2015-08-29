@@ -1,0 +1,17 @@
+<hr/>
+<ul class="pager">
+ {% if article.next_article %}
+     <li class="previous">
+         <a href="{{ SITEURL }}/{{ article.next_article.url}}">
+             &larr; {{ article.next_article.title }}
+         </a>
+     </li>
+ {% endif %}
+ {% if article.prev_article %}
+     <li class="next">
+         <a href="{{ SITEURL }}/{{ article.prev_article.url}}">
+             {{ article.prev_article.title }} &rarr;
+         </a>
+     </li>
+ {% endif %}
+</ul>
