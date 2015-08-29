@@ -85,7 +85,16 @@
                         {% include "includes/article_info.html" %}
                     </div>
                 </div>
+                {% if article.image %}
+                <div class="thumbnail with-caption">
+                  <img class="article-image img-responsive" alt="article header image" itemprop="image" src="{{ SITEURL }}/images/{{ article.image }}" />
+                  {% if article.image_credits %}
+                    <p><small>{{article.image_credits}}</small></p>
+                  {% endif %}
+                </div>
+                {% endif %}
                 {{ article.content }}
+
             </div>
             <!-- /.entry-content -->
             {% include 'includes/custom/neighbors.html' %}
