@@ -2,14 +2,20 @@
 {% block content %}
     {% if articles %}
         {% for article in (articles_page.object_list if articles_page else articles) %}
-            <article>
+            <article class="'clearfix">
                 <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
                 {% if DISPLAY_ARTICLE_INFO_ON_INDEX %}
                     <div class="well well-sm">
                         {% include "includes/article_info.html" %}
                     </div>
                 {% endif %}
-                <div class="summary">{{ article.summary }}
+                <div class="summary">
+                    {% if article.image %}
+                      <div class="thumbnail-container"><img class="img-thumbnail" src="/thumbnails/small/{{article.image}}"/></div>
+                    {% else %}
+                      <div class="thumbnail-container"><img class="img-thumbnail" src="/thumbnails/small/featured_image.jpg"/></div>
+                    {% endif %}
+                    {{ article.summary }}
                     {% include 'includes/comment_count.html' %}
                     <a class="btn btn-default btn-xs" href="{{ SITEURL }}/{{ article.url }}">閱讀全文 ...</a>
                 </div>
