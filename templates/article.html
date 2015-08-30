@@ -36,12 +36,12 @@
         {% elif AUTHOR %}
             <meta property="article:author" content="{{ AUTHOR }}" />
         {% endif %}
-        {% if article.og_image %}
+        {% if article.image %}
             <meta property="og:image"
-                  content="{{ SITEURL }}/{{ article.og_image }}"/>
+                  content="{{ SITEURL }}/media/{{ article.image }}"/>
         {% elif OPEN_GRAPH_IMAGE %}
             <meta property="og:image"
-                  content="{{ SITEURL }}/{{ OPEN_GRAPH_IMAGE }}"/>
+                  content="{{ SITEURL }}/media/featured_image.jpg"/>
         {% endif %}
     {% endif %}
 {% endblock %}
@@ -85,6 +85,19 @@
                         {% include "includes/article_info.html" %}
                     </div>
                 </div>
+                {% if article.image %}
+                <div class="featured-image">
+                      <img class="article-image img-responsive" alt="{{article.title}}" itemprop="image" src="/media/{{article.image}}"/>
+                  {% if article.image_credits %}
+                    <p><small>{{article.image_credits}}</small></p>
+                  {% endif %}
+                </div>
+                {% else %}
+                <div class="featured-image">
+                      <img class="article-image img-responsive" alt="{{article.title}}" itemprop="image" src="/media/featured_image.jpg"/>
+                </div>
+                {% endif %}
+
                 {{ article.content }}
 
             </div>
