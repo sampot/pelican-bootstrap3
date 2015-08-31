@@ -1,6 +1,6 @@
 {% if article.series %}
 <section class="well" id="related-posts">
-   {% set text = SERIES_TEXT|default('「%(name)s」系列之 %(index)s') %}
+   {% set text = SERIES_TEXT|default('本文是「%(name)s」系列之 %(index)s') %}
     <h4>{{ text|format(index=article.series.index, name=article.series.name) }}</h4>
     {% if article.series.all_previous %}
        <h5>前期文章</h5>
