@@ -1,7 +1,20 @@
 {% extends "article_list.html" %}
 
+
 {% block canonical_rel %}<link rel="canonical" href="{{ SITEURL }}">{% endblock %}
 
 {% block banner %}
 	{% include 'includes/banner.html' %}
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript">
+    if (window.applicationCache) {
+        window.applicationCache.addEventListener('updateready', function() {
+            if (confirm('新的內容已經下載，是否要刷新頁面?')) {
+                window.location.reload();
+            }
+        });
+    }
+    </script>
 {% endblock %}
