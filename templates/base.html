@@ -204,11 +204,11 @@
         ev.preventDefault();
         q = $('#tipue_search_input').val()
         url = window.location.href
-        var pathname = window.location.pathname;
-        var index1 = url.indexOf(pathname);
-        var index2 = url.indexOf("/", index1 + 1);
-        var baseLocalUrl = url.substr(0, index2);
-        window.location = baseLocalUrl + 'search.html#' + q
+        pathArray = location.href.split( '/' );
+        protocol = pathArray[0];
+        host = pathArray[2];
+        url = protocol + '//' + host;
+        window.location = url + '/search.html#' + q
     });
 </script>
 
