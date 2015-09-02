@@ -1,14 +1,11 @@
 {% if GITHUB_USER %}
-    <li class="list-group-item"><h4><i class="fa fa-github fa-lg"></i><span class="icon-label">GitHub 倉庫</span></h4>
-        <div id="gh_repos">
-          <ul class="list-group">
-            {% for project in github_projects %}
-              <li class="list-group-item">
-                  <a href="{{ project.github_url }}" target="_blank">{{ project.name }}</a>
-                  <p><small>{{ project.description }}</small></p>
-              </li>
-            {% endfor %}
-          </ul>
-        </div>
-    </li>
+    <h3 class="fa fa-github fa-lg" style="margin-bottom:0.5px;">GitHub 倉庫</h3>
+    <ul style="list-style-type:circle">
+        {% for project in github_projects %}
+        <li>
+            <a href="{{ project.github_url }}" target="_blank">{{ project.name }}</a>
+            <p><small>{{ project.description }}</small></p>
+        </li>
+        {% endfor %}
+    </ul>
 {% endif %}
