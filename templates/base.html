@@ -21,8 +21,8 @@
     {% if FAVICON_IE %}
     <!--[if IE]><link rel="shortcut icon" href="{{ SITEURL }}/{{ FAVICON_IE }}"><![endif]-->
     {% endif %}
-    {% if TOUCHICON %}
-    <link rel="apple-touch-icon" href="{{ SITEURL }}/{{ TOUCHICON }}">
+    {% if USE_TOUCHICONS %}
+    {% include 'includes/custom/touchicons.html' %}
     {% endif %}
 
     {% block canonical_rel %}{% endblock %}

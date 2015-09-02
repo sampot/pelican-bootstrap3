@@ -97,7 +97,14 @@
                       <img class="article-image img-responsive" alt="{{article.title}}" itemprop="image" src="/media/featured_image.jpg"/>
                 </div>
                 {% endif %}
-
+                {% if article.toc %}
+                <div class="toc-wrapper panel panel-default pull-right">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">目錄</h3>
+                  </div>
+                    {{ article.toc }}
+                </div>
+                {% endif %}
                 {{ article.content }}
 
             </div>
