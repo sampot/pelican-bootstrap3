@@ -1,11 +1,15 @@
-<div id="aboutme" align="center">
+<div id="aboutme">
 	<h3 class="fa fa-user fa-lg" style="margin-bottom:0.5px;">我的簡介</h3><br/>
     {% if AVATAR %}
         <p>
-            <img width="60%" class="img-thumbnail" src="{{SITEURL}}/{{ AVATAR }}"/>
+            <img width="60%" class="img-thumbnail center-block" src="{{SITEURL}}/{{ AVATAR }}"/>
         </p>
     {% endif %}
     <p>
-        {{ ABOUT_ME }}
-    </p>
+我是山姆鍋，過去擔任過軟體工程師、系統分析師、架構師、研發副總等工作。
+「我是山姆鍋」是我的個人部落格，記錄與分享一些軟體開發與運營相關資訊，偶爾也會碎念一下。<br/><br/>
+關於我的進一步資訊，您可以:
+<p>
+<a href="/about/" class="btn btn-default btn-xs" role="button">參考這裏</a> 或者
+<a href='/contact/'  class="btn btn-default btn-xs" role="button">與我聯繫</a></p>
 </div>
