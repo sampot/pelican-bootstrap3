@@ -11,7 +11,7 @@
         <meta name="keywords" content="{{ article.tags|join(',')|striptags }}" />
     {% endif %}
     {% if article.summary %}
-        <meta name="description" content="{{ article.summary|striptags|escape }}" />
+        <meta name="description" content="{{ article.summary|striptags|escape|truncate(120) }}" />
     {% endif %}
 {% endblock %}
 {% block opengraph %}
@@ -23,7 +23,7 @@
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="{{ article.title|striptags|escape }}"/>
         <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}"/>
-        <meta property="og:description" content="{{ article.summary|striptags|escape }}"/>
+        <meta property="og:description" content="{{ article.summary|striptags|escape|truncate(120) }}"/>
         <meta property="article:published_time" content="{{ article.date.strftime("%Y-%m-%d") }}" />
         {% if article.category %}
             <meta property="article:section" content="{{ article.category }}" />
@@ -69,13 +69,13 @@
 
 {% block content %}
     <section id="content">
-        <article>
+        <article itemscope itemtype="http://schema.org/Article">
             <header class="page-header">
                 <h1>
                     <a href="{{ SITEURL }}/{{ article.url }}"
                        rel="bookmark"
                        title="Permalink to {{ article.title|striptags }}">
-                        {{ article.title }}
+                        <span itemprop="headline">{{ article.title }}</span>
                     </a>
                 </h1>
             </header>
@@ -87,14 +87,14 @@
                 </div>
                 {% if article.image %}
                 <div class="featured-image">
-                      <img class="article-image img-responsive" alt="{{article.title}}" itemprop="image" src="/media/{{article.image}}"/>
+                      <img itemprop="image" class="article-image img-responsive" alt="{{article.title}}"src="/media/{{article.image}}"/>
                   {% if article.image_credits %}
                     <p><small>{{article.image_credits}}</small></p>
                   {% endif %}
                 </div>
                 {% else %}
                 <div class="featured-image">
-                      <img class="article-image img-responsive" alt="{{article.title}}" itemprop="image" src="/media/featured_image.jpg"/>
+                      <img itemprop="image" class="article-image img-responsive" alt="{{article.title}}" itemprop="image" src="/media/featured_image.jpg"/>
                 </div>
                 {% endif %}
                 {% if article.toc %}
@@ -105,7 +105,9 @@
                     {{ article.toc }}
                 </div>
                 {% endif %}
+                <div itemprop="articleBody">
                 {{ article.content }}
+                </div>
 
             </div>
             <!-- /.entry-content -->
