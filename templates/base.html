@@ -4,7 +4,7 @@
 {% endif %}
 <html lang="{% block html_lang %}{{ HTML_LANG }}{% endblock %}" {% if USE_APPCACHE %}manifest='{{SITEURL}}/{{APPCACHE_MANIFEST}}'{% endif %} {% if USE_OPEN_GRAPH %} prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml"{% endif %}>
 <head>
-    <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+    <title>{% block title %}{{ SITENAME }} - {{ SITETAG }}{% endblock %}</title>
     <script type="text/javascript">
         var host = "samkuo.me";
         if ((host == window.location.host) && (window.location.protocol != "https:"))
