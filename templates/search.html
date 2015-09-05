@@ -22,8 +22,26 @@
       });
     });
     </script>
+    <script type="text/javascript">
+    $('#tipue_search_box').submit(function(ev) {
+        ev.preventDefault();
+        q = $('#tipue_search_input2').val()
+        url = window.location.href
+        pathArray = location.href.split( '/' );
+        protocol = pathArray[0];
+        host = pathArray[2];
+        url = protocol + '//' + host;
+        window.location = url + '/search.html#' + q
+    });
+    </script>
 {% endblock %}
 
 {% block content %}
+<h1 class="entry-title">搜尋文章</h1>
+<form id='tipue_search_box' action="{{ SEARCH_URL | default('/search.html') }}">
+    <input type="text" class="search-query" placeholder="搜尋文章" name="q" id="tipue_search_input2" required>
+</form>
+
+<hr/>
 <div id="tipue_search_content"></div>
 {% endblock %}

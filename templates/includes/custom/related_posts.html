@@ -1,0 +1,17 @@
+{% if article.related_posts %}
+<section class="well" id="related-posts">
+    <h4>{{ RELATED_POSTS_TEXT|default('Related Posts:') }}</h4>
+    <div class="row">
+    {% for related_post in article.related_posts %}
+        <div class="col-sm-3 col-md-3">
+            <div class="thumbnail">
+                <img src="{{ SITEURL }}/thumbnails/small/{{ related_post.image }}"/>
+                <div class="caption">
+                  <h4><a href="{{ SITEURL }}/{{ related_post.url }}">{{ related_post.title }}</a></h4>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</section>
+{% endif %}
