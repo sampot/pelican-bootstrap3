@@ -102,7 +102,11 @@ http://www.tipue.com/search
                     q = window.location.hash.substr(1)
                     $('#tipue_search_input').val(q);
                     getTipueSearch(0, true);
-               }               
+               } else if(getURLP('q'))
+               {
+                    $('#tipue_search_input').val(getURLP('q'));
+                    getTipueSearch(0, true);
+               }
                
                $(this).keyup(function(event)
                {
