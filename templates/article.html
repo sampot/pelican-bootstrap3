@@ -87,7 +87,7 @@
                 </div>
                 {% if article.image %}
                 <div class="featured-image">
-                      <img itemprop="image" class="article-image img-responsive" alt="{{article.title}}"src="/media/{{article.image}}"/>
+                      <img itemprop="image" class="article-image img-responsive" alt="{{article.title}}" src="/media/{{article.image}}"/>
                   {% if article.image_credits %}
                     <p><small>{{article.image_credits}}</small></p>
                   {% endif %}
@@ -100,7 +100,7 @@
                 {% if article.toc %}
                 <div class="toc-wrapper panel panel-default pull-right">
                   <div class="panel-heading">
-                    <h3 class="panel-title">目錄</h3>
+                    <h3 class="panel-title">內容大綱</h3>
                   </div>
                     {{ article.toc }}
                 </div>
