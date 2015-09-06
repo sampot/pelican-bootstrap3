@@ -55,7 +55,7 @@
         {% if DISPLAY_CATEGORY_IN_BREADCRUMBS %}
             <ol class="breadcrumb">
                 <li><a href="{{ SITEURL }}" title="{{ SITENAME }}"><i class="fa fa-home fa-lg"></i></a></li>
-                <li><a href="{{ SITEURL }}/{{ article.category.url }}" title="{{ article.category }}">{{ article.category }}</a></li>
+                <li><a href="{{ SITEURL }}/{{ article.category.url }}" title="{{ article.category|mytrans }}">{{ article.category|mytrans }}</a></li>
                 <li class="active">{{ article.title }}</li>
             </ol>
         {% else %}
