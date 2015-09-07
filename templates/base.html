@@ -2,7 +2,7 @@
 {% if USE_OPEN_GRAPH is not defined %}
     {% set USE_OPEN_GRAPH = True %}
 {% endif %}
-<html lang="{% block html_lang %}{{ HTML_LANG }}{% endblock %}" {% if USE_APPCACHE %}manifest='{{SITEURL}}/{{APPCACHE_MANIFEST}}'{% endif %} {% if USE_OPEN_GRAPH %} prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml"{% endif %}>
+<html lang="{% block html_lang %}{{ HTML_LANG }}{% endblock %}" {% block htmlattrs %}{% endblock %} {% if USE_OPEN_GRAPH %} prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml"{% endif %}>
 <head>
     <title>{% block title %}{{ SITENAME }} - {{ SITETAG }}{% endblock %}</title>
     <script type="text/javascript">

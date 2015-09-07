@@ -2,6 +2,7 @@
 
 
 {% block canonical_rel %}<link rel="canonical" href="{{ SITEURL }}">{% endblock %}
+{% block htmlattrs %}{% if USE_APPCACHE %}manifest='{{SITEURL}}/{{APPCACHE_MANIFEST}}'{% endif %}{% endblock %}
 
 {% block meta %}
     <meta name="author" content="{{ AUTHOR }}" />
