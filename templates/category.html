@@ -6,9 +6,17 @@
 {% endblock %}
 {% block breadcrumbs %}
     {% if DISPLAY_BREADCRUMBS %}
-    <ol class="breadcrumb">
-        <li><a href="{{ SITEURL }}" title="{{ SITENAME }}"><i class="fa fa-home fa-lg"></i></a></li>
-        <li><a href="{{ SITEURL}}/{{ CATEGORIES_URL }}" title="{{ SITENAME }} 文章分類">文章分類</a></li>
+    <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <a  itemprop="item" href="{{ SITEURL }}" title="{{ SITENAME }}"><i class="fa fa-home fa-lg"></i>
+                <span itemprop="name">首頁</span></a>
+                <meta itemprop="position" content="1" />
+        </li>
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <a  itemprop="item" href="{{ SITEURL}}/{{ CATEGORIES_URL }}" title="{{ SITENAME }} 文章分類">
+                <span itemprop="name">文章分類</span></a>
+                <meta itemprop="position" content="2" />
+        </li>
         <li class="active">{{ category|mytrans }}</li>
     </ol>
     {% endif %}

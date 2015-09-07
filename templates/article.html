@@ -55,15 +55,23 @@
 {% block breadcrumbs %}
     {% if DISPLAY_BREADCRUMBS %}
         {% if DISPLAY_CATEGORY_IN_BREADCRUMBS %}
-            <ol class="breadcrumb">
-                <li><a href="{{ SITEURL }}" title="{{ SITENAME }}"><i class="fa fa-home fa-lg"></i></a></li>
-                <li><a href="{{ SITEURL }}/{{ article.category.url }}" title="{{ article.category|mytrans }}">{{ article.category|mytrans }}</a></li>
+            <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a  itemprop="item" href="{{ SITEURL }}" title="{{ SITENAME }}"><i class="fa fa-home fa-lg"></i>
+                        <span itemprop="name">首頁</span></a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a  itemprop="item" href="{{ SITEURL }}/{{ article.category.url }}" title="{{ article.category|mytrans }}">
+                        <span itemprop="name">{{ article.category|mytrans }}</span></a>
+                    <meta itemprop="position" content="2" />
+                </li>
                 <li class="active">{{ article.title }}</li>
             </ol>
         {% else %}
             <ol class="breadcrumb">
-                <li><a href="{{ SITEURL }}" title="{{ SITENAME }}"><i class="fa fa-home fa-lg"></i></a></li>
-                <li class="active">{{ article.title }}</li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="{{ SITEURL }}" title="{{ SITENAME }}"><i class="fa fa-home fa-lg"></i>首頁</a></li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"class="active"><span itemprop="name">{{ article.title }}</span></li>
             </ol>
         {% endif %}
     {% endif %}
