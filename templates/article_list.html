@@ -13,7 +13,7 @@
                     {% if article.image %}
                       <div class="thumbnail-container"><a href="{{ SITEURL }}/{{ article.url }}"><img class="img-thumbnail" src="/thumbnails/small/{{article.image}}" alt="thumbnail"/></a></div>
                     {% else %}
-                      <div class="thumbnail-container"><a href="{{ SITEURL }}/{{ article.url }}"><img class="img-thumbnail" src="/thumbnails/small/featured_image.jpg alt="thumbnail""/></a></div>
+                      <div class="thumbnail-container"><a href="{{ SITEURL }}/{{ article.url }}"><img class="img-thumbnail" src="/thumbnails/small/featured_image.jpg" alt="thumbnail"/></a></div>
                     {% endif %}
                     {{ article.summary }}
                     <a class="btn btn-default btn-xs pull-right" href="{{ SITEURL }}/{{ article.url }}">閱讀全文 ...</a>
