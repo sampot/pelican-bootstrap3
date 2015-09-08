@@ -1,8 +1,12 @@
 {% macro translations_for(article) %}
 {% if article.translations %}
-<span class="label label-default">Lang</span>
+<span class="label label-primary">其它語言版本</span>
 {% for translation in article.translations %}
-	<a href="{{ SITEURL }}/{{ translation.url }}">{{ translation.lang }}</a>
+	{% if translation.lang == 'en' %}
+	<a href="{{ SITEURL }}/{{ translation.url }}"><span class="label label-info">英文</span></a>
+	{% else %}
+	<a href="{{ SITEURL }}/{{ translation.url }}"><span class="label label-info">Chinese</span></a>
+	{% endif %}
 {% endfor %}
 {% endif %}
 {% endmacro %}
