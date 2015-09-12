@@ -89,7 +89,7 @@
     {% endif %}
 
     {% if FEED_ALL_ATOM %}
-        <link href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate"
+        <link href="{{ FEED_ALL_URL }}" type="application/atom+xml" rel="alternate"
               title="{{ SITENAME }} ATOM Feed"/>
     {% endif %}
 
@@ -161,7 +161,7 @@
                 {% endif %}
 
               <li><a href="{{ SITEURL }}/{{ ARCHIVES_URL | default('archives.html') }}"><i class="fa fa-th-list"></i><span class="icon-label">文章匯整</span></a></li>
-              <li><a href="{{ SITEURL }}/{{ FEED_ALL_ATOM | default('all.atom.xml') }}"><i class="fa fa-rss"></i><span class="icon-label">訂閱</span></a></li>
+              <li><a href="{{ FEED_ALL_URL | default('/feeds/all.atom.xml') }}"><i class="fa fa-rss"></i><span class="icon-label">訂閱</span></a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
