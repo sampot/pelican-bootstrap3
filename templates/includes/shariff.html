@@ -1,7 +1,6 @@
 {% if SHARIFF|default(false) %}
     <hr />
     <!-- Shariff Button BEGIN -->
-    知識不會因為傳播而減少，喜歡這篇文章請幫忙分享。
     <div class="shariff"
         {% if SHARIFF_BACKEND_URL %}
         data-backend-url="{{ SHARIFF_BACKEND_URL }}"
@@ -21,6 +20,7 @@
         {% if SHARIFF_TWITTER_VIA|default(false) %}
         data-twitter-via="{{ TWITTER_USERNAME }}"
         {% endif %}
-        data-url="{{ SITEURL }}/{{ article.url }}"></div>
+        data-url="{{ SITEURL }}/{{ article.url }}">
+    </div>
     <!-- Shariff Button END -->
 {% endif %}

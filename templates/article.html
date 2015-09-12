@@ -97,16 +97,19 @@
                 </div>
                 {% if article.image %}
                 <div class="featured-image">
-                      <img itemprop="image" class="article-image img-responsive" alt="{{article.title}}" src="/media/{{article.image}}"/>
+                      <img itemprop="image" class="article-image img-responsive" alt="{{article.title}}" src="{{ SITEURL }}/media/{{article.image}}"/>
                   {% if article.image_credits %}
                     <p><small>{{article.image_credits}}</small></p>
                   {% endif %}
                 </div>
                 {% else %}
                 <div class="featured-image">
-                      <img itemprop="image" class="article-image img-responsive" alt="{{article.title}}" itemprop="image" src="/media/featured_image.jpg"/>
+                      <img itemprop="image" class="article-image img-responsive" alt="{{article.title}}" itemprop="image" src="{{ SITEURL }}/media/featured_image.jpg"/>
                 </div>
                 {% endif %}
+
+                {% include 'includes/shariff.html' %}
+
                 {% if article.toc %}
                 <div class="toc-wrapper panel panel-default pull-right hidden-xs">
                   <div class="panel-heading">
@@ -123,6 +126,8 @@
             <!-- /.entry-content -->
             <footer>
             {% include 'includes/shariff.html' %}
+            <p>知識不會因為傳播而減少，喜歡這篇文章請幫忙分享。</p>
+
             {% include 'includes/custom/authorinfo.html' %}
             {% include 'includes/custom/neighbors.html' %}
             {% include 'includes/related-posts.html' %}
