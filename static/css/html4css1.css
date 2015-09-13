@@ -149,8 +149,8 @@ h1.title {
 h2.subtitle {
   text-align: center }
 
-hr.docutils {
-  width: 75% }
+//hr.docutils {
+//  width: 75% }
 
 img.align-left, .figure.align-left, object.align-left {
   clear: left ;
