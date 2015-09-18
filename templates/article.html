@@ -140,6 +140,10 @@
 
 {% endblock %}
 
+{% block footer %}
+{% include 'includes/custom/footer_article.html' %}
+{% endblock %}
+
 {% block scripts %}
 {% if ADDTHIS_PROFILE %}
     {% if ADDTHIS_DATA_TRACK_ADDRESSBAR|default(true) %}

@@ -151,7 +151,7 @@
               </li>
             {% endif %}
                 {% if DISPLAY_MENUITEMS_ON_MENU %}
-                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-book"></i><span class="icon-label">文章分類</span></a>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-book"></i><span class="icon-label">分類</span></a>
                     <ul class="dropdown-menu">
                     {% for title, link in MENUITEMS %}
                         <li><a href="{{ link }}">{{ title }}</a></li>
@@ -160,7 +160,7 @@
                 </li>
                 {% endif %}
 
-              <li><a href="{{ SITEURL }}/{{ ARCHIVES_URL | default('archives.html') }}"><i class="fa fa-th-list"></i><span class="icon-label">文章匯整</span></a></li>
+              <li><a href="{{ SITEURL }}/{{ ARCHIVES_URL | default('archives.html') }}"><i class="fa fa-th-list"></i><span class="icon-label">匯整</span></a></li>
               <li><a href="{{ FEED_ALL_URL | default('/feeds/all.atom.xml') }}"><i class="fa fa-rss"></i><span class="icon-label">訂閱</span></a></li>
             </ul>
         </div>
