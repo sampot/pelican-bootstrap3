@@ -14,6 +14,9 @@
 	{% include 'includes/custom/banner.html' %}
 {% endblock %}
 {% block content %}
+    <div><blockquote><a href="https://www.facebook.com/sampotkuo">「我是山姆鍋」也有臉書專頁</a></blockquote>
+
+</div>
     {% if articles %}
         {% for article in (articles_page.object_list if articles_page else articles) %}
             <article class="'clearfix">
