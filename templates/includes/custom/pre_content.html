@@ -1,2 +1,6 @@
 <div class="fb-like" data-share="true"></div>
-<div><blockquote><a href="https://www.facebook.com/sampotkuo">「我是山姆鍋」也有臉書專頁</a></blockquote>
+{% if [0, 1]|random %}
+<div><blockquote><a target="_blank" href="https://www.facebook.com/groups/developers.tw/">歡迎加入《 台灣開發者文摘 》臉書社團</a></blockquote></div>
+{% else %}
+<div><blockquote><a target="_blank" href="https://www.facebook.com/sampotkuo">山姆鍋也有臉書專頁</a></blockquote></div>
+{% endif %}
